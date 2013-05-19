@@ -37,4 +37,23 @@ For example, to customise ``photologue/gallery_list.html``, you can have an impl
 
     ... we are now extending the built-in gallery_list.html and we can override
     the content blocks that we want to customise ...
-    
+
+Third-party templates
+---------------------
+Photologue has a 'contrib' folder that includes (or will include in future!) some
+useful tweaks to the base project. At the moment, we have just one admin template
+tweak:
+
+The Petry Photo changelist
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+Changes the appearance of the Photo changelist in the admin. `See a screenshot here <https://github.com/jdriscoll/django-photologue/issues/12>`_.
+
+To use this customised page, edit your  ``TEMPLATE_DIRS`` setting::
+
+
+    from photologue import PHOTOLOGUE_TEMPLATE_DIR
+    TEMPLATE_DIRS = (
+        ...
+        os.path.join(PHOTOLOGUE_TEMPLATE_DIR, 'contrib/petry_changelist/templates'),
+        ... other folders containing Photologue templates should come after...
+    )
