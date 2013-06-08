@@ -1,5 +1,9 @@
 from django.contrib import admin
-from .models import *
+
+from photologue.models import GalleryUpload, Photo, PhotoEffect, PhotoSize, Watermark
+from photologue import get_gallery_model
+
+Gallery = get_gallery_model()
 
 class GalleryAdmin(admin.ModelAdmin):
     list_display = ('title', 'date_added', 'photo_count', 'is_public')
@@ -57,7 +61,6 @@ class WatermarkAdmin(admin.ModelAdmin):
 class GalleryUploadAdmin(admin.ModelAdmin):
     def has_change_permission(self, request, obj=None):
         return False # To remove the 'Save and continue editing' button
-
 
 admin.site.register(Gallery, GalleryAdmin)
 admin.site.register(GalleryUpload, GalleryUploadAdmin)

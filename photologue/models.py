@@ -67,7 +67,24 @@ from .utils.watermark import apply_watermark
 LATEST_LIMIT = getattr(settings, 'PHOTOLOGUE_GALLERY_LATEST_LIMIT', None)
 
 # Number of random images from the gallery to display.
-SAMPLE_SIZE = getattr(settings, 'GALLERY_SAMPLE_SIZE', 5)
+__DEFAULT_SAMPLE_SIZE = 5
+SAMPLE_SIZE = getattr(settings, 'GALLERY_SAMPLE_SIZE', __DEFAULT_SAMPLE_SIZE)
+
+from django.test.signals import setting_changed
+from django.dispatch import receiver
+
+@receiver(setting_changed)
+def changed_sample_size(sender, signal, setting, value, **kwargs):
+    """Handle unit tests that change setting GALLERY_SAMPLE_SIZE - as this is
+    loaded and cached on models.py, we need to handle dynamic changes."""
+    if setting != 'GALLERY_SAMPLE_SIZE':
+        return
+    global SAMPLE_SIZE
+    if value == None:
+        # Don't know what value to set it to, so set to default.
+        SAMPLE_SIZE = __DEFAULT_SAMPLE_SIZE
+    else:
+        SAMPLE_SIZE = value
 
 # max_length setting for the ImageModel ImageField
 IMAGE_FIELD_MAX_LENGTH = getattr(settings, 'PHOTOLOGUE_IMAGE_FIELD_MAX_LENGTH', 100)

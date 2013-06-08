@@ -14,7 +14,11 @@ etc...
 """
 
 from django.contrib.sitemaps import Sitemap
-from .models import Gallery, Photo
+
+from photologue import get_gallery_model
+from photologue.models import Photo
+
+Gallery = get_gallery_model()
 
 class PhotologueSitemap(Sitemap):
     priority = 0.5

@@ -3,7 +3,11 @@
 from django.views.generic.dates import ArchiveIndexView, DateDetailView, DayArchiveView, MonthArchiveView, YearArchiveView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
-from photologue.models import Photo, Gallery
+from photologue import get_gallery_model
+from photologue.models import Photo
+
+Gallery = get_gallery_model()
+
 
 class PhotoView(object):
     queryset = Photo.objects.filter(is_public=True)
