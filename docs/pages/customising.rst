@@ -37,4 +37,32 @@ For example, to customise ``photologue/gallery_list.html``, you can have an impl
 
     ... we are now extending the built-in gallery_list.html and we can override
     the content blocks that we want to customise ...
+
+Extending Gallery and Photo models
+----------------------------------
+These models can be extended in a similar manner to Django 1.5's User model.
+
+For example, let's extend the Gallery model to add a ``photos_of_cheese`` BooleanField,
+which the website admins might use to flag galleries that contain photos of cheese.
+
+Create in your project a new model that extends the built-in Gallery::
+
+    # In yourapp/models.py
+
+    from django.db import models
+    
+    from photologue.models import AbstractBaseGallery
+    
+    
+    class CustomGallery(AbstractBaseGallery):
+    
+        photos_of_cheese = models.BooleanField(null=True, blank=True)
+
+Add to settings file a pointer to this customised model::
+
+    PHOTOLOGUE_GALLERY_MODEL = 'yourapp.CustomGallery'
+
+This is enough for a basic change; 
+
+
     

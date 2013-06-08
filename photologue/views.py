@@ -36,31 +36,36 @@ class PhotoMonthArchiveView(PhotoDateView, MonthArchiveView):
 class PhotoYearArchiveView(PhotoDateView, YearArchiveView):
     pass
 
-
 #gallery Views
 class GalleryView(object):
     queryset = Gallery.objects.filter(is_public=True)
+    template_name = 'photologue/gallery_archive.html'
 
 class GalleryListView(GalleryView, ListView):
     paginate_by = 1
+    template_name = 'photologue/gallery_list.html'
 
 class GalleryDetailView(GalleryView, DetailView):
     slug_field = 'title_slug'
+    template_name = 'photologue/gallery_detail.html'
 
 class GalleryDateView(GalleryView):
     date_field = 'date_added'
+    template_name = 'photologue/gallery_detail.html'
 
 class GalleryDateDetailView(GalleryDateView, DateDetailView):
     slug_field = 'title_slug'
+    template_name = 'photologue/gallery_detail.html'
 
 class GalleryArchiveIndexView(GalleryDateView, ArchiveIndexView):
-    pass
+    template_name = 'photologue/gallery_archive.html'
 
 class GalleryDayArchiveView(GalleryDateView, DayArchiveView):
-    pass
+    template_name = 'photologue/gallery_archive_day.html'
 
 class GalleryMonthArchiveView(GalleryDateView, MonthArchiveView):
-    pass
+    template_name = 'photologue/gallery_archive_month.html'
 
 class GalleryYearArchiveView(GalleryDateView, YearArchiveView):
-    pass
+    template_name = 'photologue/gallery_archive_year.html'
+

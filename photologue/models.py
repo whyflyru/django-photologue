@@ -155,7 +155,7 @@ for n in dir(ImageFilter):
 IMAGE_FILTERS_HELP_TEXT = _('Chain multiple filters using the following pattern "FILTER_ONE->FILTER_TWO->FILTER_THREE". Image filters will be applied in order. The following filters are available: %s.' % (', '.join(filter_names)))
 
 
-class Gallery(models.Model):
+class AbstractBaseGallery(models.Model):
     date_added = models.DateTimeField(_('date published'), default=now)
     title = models.CharField(_('title'), max_length=50, unique=True)
     title_slug = models.SlugField(_('title slug'), unique=True,
@@ -165,9 +165,9 @@ class Gallery(models.Model):
                                     help_text=_('Public galleries will be displayed in the default views.'))
     photos = models.ManyToManyField('Photo', related_name='galleries', verbose_name=_('photos'),
                                     null=True, blank=True)
-    tags = TagField(help_text=tagfield_help_text, verbose_name=_('tags'))
 
     class Meta:
+        abstract = True
         ordering = ['-date_added']
         get_latest_by = 'date_added'
         verbose_name = _('gallery')
@@ -214,11 +214,19 @@ class Gallery(models.Model):
         """Return a queryset of all the public photos in this gallery."""
         return self.photos.filter(is_public=True)
 
+class BaseGallery(AbstractBaseGallery):
+
+    # Tags will be deprecated in future and removed.
+    tags = TagField(help_text=tagfield_help_text, verbose_name=_('tags'))
+
+    class Meta:
+        swappable = 'PHOTOLOGUE_GALLERY_MODEL'
+
 
 class GalleryUpload(models.Model):
     zip_file = models.FileField(_('images file (.zip)'), upload_to=PHOTOLOGUE_DIR + "/temp",
                                 help_text=_('Select a .zip file of images to upload into a new Gallery.'))
-    gallery = models.ForeignKey(Gallery, verbose_name=_('gallery'), null=True, blank=True, help_text=_('Select a gallery to add these images to. leave this empty to create a new gallery from the supplied title.'))
+    gallery = models.ForeignKey(settings.PHOTOLOGUE_GALLERY_MODEL, verbose_name=_('gallery'), null=True, blank=True, help_text=_('Select a gallery to add these images to. leave this empty to create a new gallery from the supplied title.'))
     title = models.CharField(_('title'), max_length=50, help_text=_('All photos in the gallery will be given a title made up of the gallery title + a sequential number.'))
     caption = models.TextField(_('caption'), blank=True, help_text=_('Caption will be added to all photos.'))
     description = models.TextField(_('description'), blank=True, help_text=_('A description of this Gallery.'))

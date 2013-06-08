@@ -12,12 +12,12 @@ def get_gallery_model():
     """Return the Gallery model that is active in this project."""
     from django.db.models import get_model
 
-    PHOTOLOGUE_GALLERY_MODEL = getattr(settings, 'PHOTOLOGUE_GALLERY_MODEL', 'photologue.Gallery')
+    PHOTOLOGUE_GALLERY_MODEL = getattr(settings, 'PHOTOLOGUE_GALLERY_MODEL', 'photologue.BaseGallery')
     try:
         app_label, model_name = PHOTOLOGUE_GALLERY_MODEL.split('.')
     except ValueError:
         raise ImproperlyConfigured("PHOTOLOGUE_GALLERY_MODEL must be of the form 'app_label.model_name'")
     gallery_model = get_model(app_label, model_name)
     if gallery_model is None:
-        raise ImproperlyConfigured("PHOTOLOGUE_GALLERY_MODEL refers to model '%s' that has not been installed" % settings.AUTH_USER_MODEL)
+        raise ImproperlyConfigured("PHOTOLOGUE_GALLERY_MODEL refers to model '%s' that has not been installed" % PHOTOLOGUE_GALLERY_MODEL)
     return gallery_model

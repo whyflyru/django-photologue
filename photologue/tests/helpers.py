@@ -1,8 +1,14 @@
 # -*- coding: utf-8 -*-
 from django.core.files.base import ContentFile
 import os
-from photologue.models import PhotoSize, Photo, Gallery
+from photologue import get_gallery_model
+from photologue.models import PhotoSize, Photo
 from django.test import TestCase
+from django.conf import settings
+from django.utils.unittest import skipIf
+
+Gallery = get_gallery_model()
+
 
 RES_DIR = os.path.join(os.path.dirname(__file__), '../res')
 LANDSCAPE_IMAGE_PATH = os.path.join(RES_DIR, 'test_photologue_landscape.jpg')
@@ -32,3 +38,9 @@ class PhotologueBaseTest(TestCase):
 def _create_new_gallery(name, slug):
     gallery = Gallery.objects.create(title=name, title_slug=slug)
     return gallery
+
+def skipIfCustomGallery(test_func):
+    """
+    Skip a test if a custom gallery model is in use.
+    """
+    return skipIf(settings.PHOTOLOGUE_GALLERY_MODEL != 'photologue.BaseGallery', 'Custom gallery model in use')(test_func)

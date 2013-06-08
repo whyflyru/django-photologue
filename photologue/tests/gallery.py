@@ -1,7 +1,12 @@
-# Note that we import directly Gallery
-from photologue.models import Gallery
+from photologue import get_gallery_model
 from photologue.tests import helpers
 
+Gallery = get_gallery_model()
+
+# Don't test if user has customised the Gallery model, as we can't be sure of
+# what it can do!
+
+@helpers.skipIfCustomGallery
 class GalleryTest(helpers.PhotologueBaseTest):
 
     def setUp(self):

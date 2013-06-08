@@ -104,3 +104,5 @@ INSTALLED_APPS = [
 
 SOUTH_TESTS_MIGRATE = False
 
+PHOTOLOGUE_GALLERY_MODEL = 'photologue.BaseGallery'
+
