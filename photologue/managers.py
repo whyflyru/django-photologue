@@ -16,7 +16,10 @@ class SharedQueries(object):
 
 
 class GalleryQuerySet(SharedQueries, QuerySet):
-    pass
+
+    def for_subdomain(self, subdomain):
+        """Return objects to given subdomain only."""
+        return self.filter(subdomain=subdomain)
 
 
 class PhotoQuerySet(SharedQueries, QuerySet):

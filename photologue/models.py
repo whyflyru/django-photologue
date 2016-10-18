@@ -181,7 +181,6 @@ class Gallery(models.Model):
                              max_length=250,
                              unique=True)
     slug = models.SlugField(_('title slug'),
-                            unique=True,
                             max_length=250,
                             help_text=_('A "slug" is a unique URL-friendly title for an object.'))
     description = models.TextField(_('description'),
@@ -197,6 +196,11 @@ class Gallery(models.Model):
     sites = models.ManyToManyField(Site, verbose_name=_(u'sites'),
                                    blank=True)
 
+    subdomain = models.CharField(_('subdomain'),
+                                 max_length=250,
+                                 blank=True,
+                                 null=True)
+
     objects = GalleryQuerySet.as_manager()
 
     class Meta:
@@ -204,6 +208,7 @@ class Gallery(models.Model):
         get_latest_by = 'date_added'
         verbose_name = _('gallery')
         verbose_name_plural = _('galleries')
+        unique_together = ('slug', 'subdomain')
 
     def __str__(self):
         return self.title

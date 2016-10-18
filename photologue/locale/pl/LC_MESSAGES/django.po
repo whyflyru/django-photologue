@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Photologue\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-05 20:42+0000\n"
+"POT-Creation-Date: 2016-10-10 20:03+0500\n"
 "PO-Revision-Date: 2015-12-23 14:50+0000\n"
 "Last-Translator: Richard Barran <richard@arbee-design.co.uk>\n"
 "Language-Team: Polish (http://www.transifex.com/richardbarran/django-"
@@ -277,7 +277,7 @@ msgstr ""
 msgid "date published"
 msgstr "data publikacji"
 
-#: models.py:180 models.py:524
+#: models.py:180 models.py:529
 msgid "title"
 msgstr "tytuł"
 
@@ -285,107 +285,111 @@ msgstr "tytuł"
 msgid "title slug"
 msgstr "tytuł - slug "
 
-#: models.py:186 models.py:530
+#: models.py:185 models.py:535
 msgid "A \"slug\" is a unique URL-friendly title for an object."
 msgstr "\"Slug\" jest unikalnym, zgodnym z formatem dla URL-i tytułem obiektu."
 
-#: models.py:187 models.py:602
+#: models.py:186 models.py:607
 msgid "description"
 msgstr "opis"
 
-#: models.py:189 models.py:535
+#: models.py:188 models.py:540
 msgid "is public"
 msgstr "jest publiczna"
 
-#: models.py:191
+#: models.py:190
 msgid "Public galleries will be displayed in the default views."
 msgstr "Galerie publiczne będą wyświetlana w domyślnych widokach."
 
-#: models.py:195 models.py:547
+#: models.py:194 models.py:552
 msgid "photos"
 msgstr "zdjęcia"
 
-#: models.py:197 models.py:538
+#: models.py:196 models.py:543
 msgid "sites"
 msgstr ""
 
-#: models.py:205
+#: models.py:199
+msgid "subdomain"
+msgstr ""
+
+#: models.py:209
 msgid "gallery"
 msgstr "galeria"
 
-#: models.py:206
+#: models.py:210
 msgid "galleries"
 msgstr "galerie"
 
-#: models.py:243
+#: models.py:248
 msgid "count"
 msgstr "ilość"
 
-#: models.py:259 models.py:743
+#: models.py:264 models.py:748
 msgid "image"
 msgstr "obraz"
 
-#: models.py:262
+#: models.py:267
 msgid "date taken"
 msgstr "data wykonania"
 
-#: models.py:265
+#: models.py:270
 msgid "Date image was taken; is obtained from the image EXIF data."
 msgstr ""
 
-#: models.py:266
+#: models.py:271
 msgid "view count"
 msgstr ""
 
-#: models.py:269
+#: models.py:274
 msgid "crop from"
 msgstr "obetnij z"
 
-#: models.py:278
+#: models.py:283
 msgid "effect"
 msgstr "efekt"
 
-#: models.py:297
+#: models.py:302
 msgid "An \"admin_thumbnail\" photo size has not been defined."
 msgstr "Rozmiar zdjęcia \"admin_thumbnail\" nie został zdefiniowany."
 
-#: models.py:305
+#: models.py:310
 msgid "Thumbnail"
 msgstr "Miniaturka"
 
-#: models.py:527
+#: models.py:532
 msgid "slug"
 msgstr "slug"
 
-#: models.py:531
+#: models.py:536
 msgid "caption"
 msgstr "podpis"
 
-#: models.py:533
+#: models.py:538
 msgid "date added"
 msgstr "data dodania"
 
-#: models.py:537
+#: models.py:542
 msgid "Public photographs will be displayed in the default views."
 msgstr "Publiczne zdjęcia będą wyświetlane w domyślnych widokach."
 
-#: models.py:546
+#: models.py:551
 msgid "photo"
 msgstr "zdjęcie"
 
-#: models.py:599 models.py:775
+#: models.py:604 models.py:780
 msgid "name"
 msgstr "nazwa"
 
-#: models.py:674
+#: models.py:679
 msgid "rotate or flip"
 msgstr "obróć lub odbij"
 
-#: models.py:678 models.py:706
+#: models.py:683 models.py:711
 msgid "color"
 msgstr "kolor"
 
-#: models.py:680
+#: models.py:685
 msgid ""
 "A factor of 0.0 gives a black and white image, a factor of 1.0 gives the "
 "original image."
@@ -393,22 +397,22 @@ msgstr ""
 "Współczynnik 0.0 daje czarno-biały obraz, współczynnik 1.0 daje obraz "
 "oryginalny."
 
-#: models.py:682
+#: models.py:687
 msgid "brightness"
 msgstr "jasność"
 
-#: models.py:684
+#: models.py:689
 msgid ""
 "A factor of 0.0 gives a black image, a factor of 1.0 gives the original "
 "image."
 msgstr ""
 "Współczynnik 0.0 daje czarny obraz, współczynnik 1.0 daje obraz oryginalny."
 
-#: models.py:686
+#: models.py:691
 msgid "contrast"
 msgstr "kontrast"
 
-#: models.py:688
+#: models.py:693
 msgid ""
 "A factor of 0.0 gives a solid grey image, a factor of 1.0 gives the original "
 "image."
@@ -416,11 +420,11 @@ msgstr ""
 "Współczynnik 0.0 daje jednolity szary obraz, współczynnik 1.0 daje obraz "
 "oryginalny."
 
-#: models.py:690
+#: models.py:695
 msgid "sharpness"
 msgstr "ostrość"
 
-#: models.py:692
+#: models.py:697
 msgid ""
 "A factor of 0.0 gives a blurred image, a factor of 1.0 gives the original "
 "image."
@@ -428,15 +432,15 @@ msgstr ""
 "Współczynnik 0.0 daje rozmazany obraz, współczynnik 1.0 daje obraz "
 "oryginalny."
 
-#: models.py:694
+#: models.py:699
 msgid "filters"
 msgstr "filtry"
 
-#: models.py:698
+#: models.py:703
 msgid "size"
 msgstr "rozmiar"
 
-#: models.py:700
+#: models.py:705
 msgid ""
 "The height of the reflection as a percentage of the orignal image. A factor "
 "of 0.0 adds no reflection, a factor of 1.0 adds a reflection equal to the "
@@ -446,49 +450,49 @@ msgstr ""
 "dodaje odbicia, współczynnik 1.0 dodaje odbicie równe wysokości oryginalnego "
 "obrazu."
 
-#: models.py:703
+#: models.py:708
 msgid "strength"
 msgstr "intensywność"
 
-#: models.py:705
+#: models.py:710
 msgid "The initial opacity of the reflection gradient."
 msgstr ""
 
-#: models.py:709
+#: models.py:714
 msgid ""
 "The background color of the reflection gradient. Set this to match the "
 "background color of your page."
 msgstr ""
 
-#: models.py:713 models.py:819
+#: models.py:718 models.py:824
 msgid "photo effect"
 msgstr "efekt zdjęcia"
 
-#: models.py:714
+#: models.py:719
 msgid "photo effects"
 msgstr "efekty zdjęć"
 
-#: models.py:745
+#: models.py:750
 msgid "style"
 msgstr "styl"
 
-#: models.py:749
+#: models.py:754
 msgid "opacity"
 msgstr "przeźroczystość"
 
-#: models.py:751
+#: models.py:756
 msgid "The opacity of the overlay."
 msgstr "Poziom przezroczystości"
 
-#: models.py:754
+#: models.py:759
 msgid "watermark"
 msgstr "znak wodny"
 
-#: models.py:755
+#: models.py:760
 msgid "watermarks"
 msgstr "znaki wodne"
 
-#: models.py:779
+#: models.py:784
 msgid ""
 "Photo size name should contain only letters, numbers and underscores. "
 "Examples: \"thumbnail\", \"display\", \"small\", \"main_page_widget\"."
@@ -496,41 +500,41 @@ msgstr ""
 "Nazwa rozmiaru zdjęcia powinna zawierać tylko litery, cyfry i podkreślenia. "
 "Przykłady: \"miniatura\", \"wystawa\", \"male\", \"widget_strony_glownej\"."
 
-#: models.py:786
+#: models.py:791
 msgid "width"
 msgstr "szerokość"
 
-#: models.py:789
+#: models.py:794
 msgid ""
 "If width is set to \"0\" the image will be scaled to the supplied height."
 msgstr ""
 "Jeśli szerokość jest ustawiona na \"0\" to obraz będzie skalowany do podanej "
 "wysokości."
 
-#: models.py:790
+#: models.py:795
 msgid "height"
 msgstr "wysokość"
 
-#: models.py:793
+#: models.py:798
 msgid ""
 "If height is set to \"0\" the image will be scaled to the supplied width"
 msgstr ""
 "Jeśli wysokość jest ustawiona na \"0\" to obraz będzie skalowany do podanej "
 "szerokości."
 
-#: models.py:794
+#: models.py:799
 msgid "quality"
 msgstr "jakość"
 
-#: models.py:797
+#: models.py:802
 msgid "JPEG image quality."
 msgstr "Jakość obrazu JPEG"
 
-#: models.py:798
+#: models.py:803
 msgid "upscale images?"
 msgstr "skalować obrazy w górę?"
 
-#: models.py:800
+#: models.py:805
 msgid ""
 "If selected the image will be scaled up if necessary to fit the supplied "
 "dimensions. Cropped sizes will be upscaled regardless of this setting."
@@ -539,11 +543,11 @@ msgstr ""
 "podanych wymiarów. Obcinane rozmiary będą skalowane niezależnie od tego "
 "ustawienia."
 
-#: models.py:804
+#: models.py:809
 msgid "crop to fit?"
 msgstr "przyciąć aby pasował?"
 
-#: models.py:806
+#: models.py:811
 msgid ""
 "If selected the image will be scaled and cropped to fit the supplied "
 "dimensions."
@@ -551,21 +555,21 @@ msgstr ""
 "Jeśli zaznaczone to obraz będzie skalowany i przycinany tak aby pasował do "
 "podanych wymiarów."
 
-#: models.py:808
+#: models.py:813
 msgid "pre-cache?"
 msgstr "wstępnie cachować?"
 
-#: models.py:810
+#: models.py:815
 msgid "If selected this photo size will be pre-cached as photos are added."
 msgstr ""
 "Jesli zaznaczone to ten rozmiar zdjęć będzie wstępnie cachowany przy "
 "dodawaniu zdjęć."
 
-#: models.py:811
+#: models.py:816
 msgid "increment view count?"
 msgstr "zwiększyć licznik odsłon?"
 
-#: models.py:813
+#: models.py:818
 msgid ""
 "If selected the image's \"view_count\" will be incremented when this photo "
 "size is displayed."
@@ -573,19 +577,19 @@ msgstr ""
 "Jeśli zaznaczone to \"licznik_odslon\" będzie zwiększany gdy ten rozmiar "
 "zdjęcia będzie wyświetlany."
 
-#: models.py:824
+#: models.py:829
 msgid "watermark image"
 msgstr "oznacz kluczem wodnym"
 
-#: models.py:828
+#: models.py:833
 msgid "photo size"
 msgstr "rozmiar zdjęcia"
 
-#: models.py:829
+#: models.py:834
 msgid "photo sizes"
 msgstr "rozmiary zdjęć"
 
-#: models.py:846
+#: models.py:851
 msgid "Can only crop photos if both width and height dimensions are set."
 msgstr ""
 
