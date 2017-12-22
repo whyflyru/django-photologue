@@ -4,18 +4,16 @@
 #
 # Translators:
 # Translators:
-# Peter-Paul van Gemerden <info@ppvg.nl>, 2009
-# Reint T. Kamp <reint@fastmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: Photologue\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-23 01:23+0500\n"
-"PO-Revision-Date: 2017-09-19 14:01+0000\n"
-"Last-Translator: Richard Barran <richard@arbee-design.co.uk>\n"
-"Language-Team: Dutch (http://www.transifex.com/richardbarran/django-"
-"photologue/language/nl/)\n"
-"Language: nl\n"
+"PO-Revision-Date: 2012-09-03 20:28+0000\n"
+"Last-Translator: richardbarran <richard@arbee-design.co.uk>\n"
+"Language-Team: Spanish (http://www.transifex.com/richardbarran/django-"
+"photologue/language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,24 +34,24 @@ msgstr[1] ""
 #, python-format
 msgid "The gallery has been successfully added to %(site)s"
 msgid_plural "The galleries have been successfully added to %(site)s"
-msgstr[0] "De gallerij is met succes toegevoegd aan %(site)s"
-msgstr[1] "De gallerijen zijn met succes toegevoegd aan %(site)s"
+msgstr[0] ""
+msgstr[1] ""
 
 #: admin.py:81
 msgid "Add selected galleries to the current site"
-msgstr "Voeg geselecteerde gallerij toe aan de huidige pagina"
+msgstr ""
 
 #: admin.py:87
 #, python-format
 msgid "The gallery has been successfully removed from %(site)s"
 msgid_plural ""
 "The selected galleries have been successfully removed from %(site)s"
-msgstr[0] "De geselecteerde gallerij is met succes verwijderd van %(site)s"
-msgstr[1] "De geselecteerde gallerijen zijn met succes verwijderd van %(site)s"
+msgstr[0] ""
+msgstr[1] ""
 
 #: admin.py:94
 msgid "Remove selected galleries from the current site"
-msgstr "Verwijder geselecteerde gallerijen van de huidige pagina"
+msgstr ""
 
 #: admin.py:101
 #, python-format
@@ -63,14 +61,11 @@ msgid_plural ""
 "All photos in galleries %(galleries)s have been successfully added to "
 "%(site)s"
 msgstr[0] ""
-"Alle foto's in gallerij %(galleries)s zijn met succes toegevoegd aan %(site)s"
 msgstr[1] ""
-"Alle foto's in gallerijen %(galleries)s zijn met succes toegevoegd aan "
-"%(site)s"
 
 #: admin.py:112
 msgid "Add all photos of selected galleries to the current site"
-msgstr "Voeg alle foto's van de gelecteerde gallerij toe aan de huidige pagina"
+msgstr ""
 
 #: admin.py:119
 #, python-format
@@ -81,45 +76,41 @@ msgid_plural ""
 "All photos in galleries %(galleries)s have been successfully removed from "
 "%(site)s"
 msgstr[0] ""
-"Alle foto's in gallerij %(galleries)s zijn met succes verwijderd van %(site)s"
 msgstr[1] ""
-"Alle foto's in gallerijen %(galleries)s zijn met succes verwijderd van "
-"%(site)s"
 
 #: admin.py:130
 msgid "Remove all photos in selected galleries from the current site"
 msgstr ""
-"Verwijder alle foto's in de geselecteerde gallerijen van de huidige pagina"
 
 #: admin.py:171
 #, python-format
 msgid "The photo has been successfully added to %(site)s"
 msgid_plural "The selected photos have been successfully added to %(site)s"
-msgstr[0] "De foto is met succes toegevoegd aan %(site)s"
-msgstr[1] "De geselecteerde foto's zijn met succes toegevoegd aan %(site)s"
+msgstr[0] ""
+msgstr[1] ""
 
 #: admin.py:178
 msgid "Add selected photos to the current site"
-msgstr "Voeg geselecteerde foto's toe aan de huidige pagina"
+msgstr ""
 
 #: admin.py:184
 #, python-format
 msgid "The photo has been successfully removed from %(site)s"
 msgid_plural "The selected photos have been successfully removed from %(site)s"
-msgstr[0] "De foto is met succes verwijderd van %(site)s"
-msgstr[1] "De geselecteerde foto's zijn met succes verwijderd van %(site)s"
+msgstr[0] ""
+msgstr[1] ""
 
 #: admin.py:191
 msgid "Remove selected photos from the current site"
-msgstr "Verwijder geselecteerde foto van de huidige pagina"
+msgstr ""
 
 #: admin.py:205 templates/admin/photologue/photo/upload_zip.html:27
 msgid "Upload a zip archive of photos"
-msgstr "Upload een zip-archief met foto's"
+msgstr ""
 
 #: forms.py:34
 msgid "Title"
-msgstr "Titel"
+msgstr ""
 
 #: forms.py:37
 msgid ""
@@ -131,27 +122,25 @@ msgstr ""
 
 #: forms.py:43
 msgid "Gallery"
-msgstr "Gallerij"
+msgstr ""
 
 #: forms.py:45
 msgid ""
 "Select a gallery to add these images to. Leave this empty to create a new "
 "gallery from the supplied title."
 msgstr ""
-"Selecteer een gallerij om deze foto's aan toe te voegen. Laat dit leeg om "
-"een nieuwe gallerij aan te maken met de gegeven titel. "
 
 #: forms.py:47
 msgid "Caption"
-msgstr "Onderschrift"
+msgstr ""
 
 #: forms.py:49
 msgid "Caption will be added to all photos."
-msgstr "Onderschrift wordt toegevoegd aan alle foto's."
+msgstr ""
 
 #: forms.py:50
 msgid "Description"
-msgstr "Omschrijving"
+msgstr ""
 
 #: forms.py:52
 msgid "A description of this Gallery. Only required for new galleries."
@@ -159,21 +148,20 @@ msgstr ""
 
 #: forms.py:53
 msgid "Is public"
-msgstr "Is publiek toegankelijk"
+msgstr ""
 
 #: forms.py:56
 msgid ""
 "Uncheck this to make the uploaded gallery and included photographs private."
-msgstr "Haal dit vinkje weg om de geüploade galerij en foto's privé te maken."
+msgstr ""
 
 #: forms.py:79
 msgid "A gallery with that title already exists."
-msgstr "Een gallerij met deze titel bestaat al"
+msgstr ""
 
 #: forms.py:89
 msgid "Select an existing gallery, or enter a title for a new gallery."
 msgstr ""
-"Selecteer een bestaande gallerij of vul de titel in van een nieuwe gallerij"
 
 #: forms.py:122
 #, python-brace-format
@@ -181,94 +169,92 @@ msgid ""
 "Ignoring file \"{filename}\" as it is in a subfolder; all images should be "
 "in the top folder of the zip."
 msgstr ""
-"Bestand \"{filename}\" ligt in een onderliggende map. Alleen afbeeldingen in "
-"de bovenste folder van de zip worden gebruikt. "
 
 #: forms.py:163
 #, python-brace-format
 msgid "Could not process file \"{0}\" in the .zip archive."
-msgstr "Kon bestand \"{0}\" in het zip-archief niet verwerken."
+msgstr ""
 
 #: forms.py:179
 #, python-brace-format
 msgid "The photos have been added to gallery \"{0}\"."
-msgstr "De foto's zijn toegevoegd aan gallerij \"{0}\"."
+msgstr ""
 
 #: models.py:100
 msgid "Very Low"
-msgstr "Zeer laag"
+msgstr ""
 
 #: models.py:101
 msgid "Low"
-msgstr "Laag"
+msgstr ""
 
 #: models.py:102
 msgid "Medium-Low"
-msgstr "Middel-laag"
+msgstr ""
 
 #: models.py:103
 msgid "Medium"
-msgstr "Gemiddeld"
+msgstr ""
 
 #: models.py:104
 msgid "Medium-High"
-msgstr "Middel-hoog"
+msgstr ""
 
 #: models.py:105
 msgid "High"
-msgstr "Hoog"
+msgstr ""
 
 #: models.py:106
 msgid "Very High"
-msgstr "Zeer hoog"
+msgstr ""
 
 #: models.py:111
 msgid "Top"
-msgstr "Boven"
+msgstr ""
 
 #: models.py:112
 msgid "Right"
-msgstr "Rechts"
+msgstr ""
 
 #: models.py:113
 msgid "Bottom"
-msgstr "Onder"
+msgstr ""
 
 #: models.py:114
 msgid "Left"
-msgstr "Links"
+msgstr ""
 
 #: models.py:115
 msgid "Center (Default)"
-msgstr "Midden (standaard)"
+msgstr ""
 
 #: models.py:119
 msgid "Flip left to right"
-msgstr "Spiegel horizontaal"
+msgstr ""
 
 #: models.py:120
 msgid "Flip top to bottom"
-msgstr "Spiegel verticaal"
+msgstr ""
 
 #: models.py:121
 msgid "Rotate 90 degrees counter-clockwise"
-msgstr "Roteer 90 graden linksom"
+msgstr ""
 
 #: models.py:122
 msgid "Rotate 90 degrees clockwise"
-msgstr "Roteer 90 graden rechtsom"
+msgstr ""
 
 #: models.py:123
 msgid "Rotate 180 degrees"
-msgstr "Roteer 180 graden"
+msgstr ""
 
 #: models.py:127
 msgid "Tile"
-msgstr "Tegelen"
+msgstr ""
 
 #: models.py:128
 msgid "Scale"
-msgstr "Schalen"
+msgstr ""
 
 #: models.py:138
 #, python-format
@@ -277,45 +263,42 @@ msgid ""
 ">FILTER_THREE\". Image filters will be applied in order. The following "
 "filters are available: %s."
 msgstr ""
-"Keten meerdere filters aan elkaar met het patroon: \"FILTER_EEN->FILTER_TWEE-"
-">FILTER_DRIE\". Afbeeldingsfilters worden in volgorde toegepast. De volgende "
-"filters zijn beschikbaar: %s."
 
 #: models.py:162
 msgid "date published"
-msgstr "datum gepubliceerd"
+msgstr ""
 
 #: models.py:164 models.py:512
 msgid "title"
-msgstr "titel"
+msgstr ""
 
 #: models.py:167
 msgid "title slug"
-msgstr "titel 'zetsel'"
+msgstr ""
 
 #: models.py:169 models.py:518
 msgid "A \"slug\" is a unique URL-friendly title for an object."
-msgstr "Een \"zetsel\" is een unieke URL-vriendelijke titel voor een object."
+msgstr ""
 
 #: models.py:170 models.py:590
 msgid "description"
-msgstr "beschrijving"
+msgstr ""
 
 #: models.py:172 models.py:523
 msgid "is public"
-msgstr "is openbaar"
+msgstr ""
 
 #: models.py:174
 msgid "Public galleries will be displayed in the default views."
-msgstr "Openbare galerijen worden weergegeven in de standaardviews."
+msgstr ""
 
 #: models.py:178 models.py:535
 msgid "photos"
-msgstr "foto's"
+msgstr ""
 
 #: models.py:180 models.py:526
 msgid "sites"
-msgstr "pagina's"
+msgstr ""
 
 #: models.py:183
 msgid "subdomain"
@@ -323,23 +306,23 @@ msgstr ""
 
 #: models.py:193
 msgid "gallery"
-msgstr "galerij"
+msgstr ""
 
 #: models.py:194
 msgid "galleries"
-msgstr "galerijen"
+msgstr ""
 
 #: models.py:232
 msgid "count"
-msgstr "aantal"
+msgstr ""
 
 #: models.py:248 models.py:731
 msgid "image"
-msgstr "afbeelding"
+msgstr ""
 
 #: models.py:251
 msgid "date taken"
-msgstr "datum genomen"
+msgstr ""
 
 #: models.py:254
 msgid "Date image was taken; is obtained from the image EXIF data."
@@ -347,107 +330,99 @@ msgstr ""
 
 #: models.py:255
 msgid "view count"
-msgstr "weergave teller"
+msgstr ""
 
 #: models.py:258
 msgid "crop from"
-msgstr "afknippen vanaf"
+msgstr ""
 
 #: models.py:267
 msgid "effect"
-msgstr "effect"
+msgstr ""
 
 #: models.py:287
 msgid "An \"admin_thumbnail\" photo size has not been defined."
-msgstr "Er is geen \"admin_thumbnail\" foto-maat vastgelegd."
+msgstr ""
 
 #: models.py:293
 msgid "Thumbnail"
-msgstr "Miniatuur"
+msgstr ""
 
 #: models.py:515
 msgid "slug"
-msgstr "zetsel"
+msgstr ""
 
 #: models.py:519
 msgid "caption"
-msgstr "onderschrift"
+msgstr ""
 
 #: models.py:521
 msgid "date added"
-msgstr "datum toegevoegd"
+msgstr ""
 
 #: models.py:525
 msgid "Public photographs will be displayed in the default views."
-msgstr "Openbare foto's worden weergegeven in de standaardviews."
+msgstr ""
 
 #: models.py:534
 msgid "photo"
-msgstr "foto"
+msgstr ""
 
 #: models.py:587 models.py:763
 msgid "name"
-msgstr "naam"
+msgstr ""
 
 #: models.py:662
 msgid "rotate or flip"
-msgstr "roteer of spiegel"
+msgstr ""
 
 #: models.py:666 models.py:694
 msgid "color"
-msgstr "kleur"
+msgstr ""
 
 #: models.py:668
 msgid ""
 "A factor of 0.0 gives a black and white image, a factor of 1.0 gives the "
 "original image."
 msgstr ""
-"Een factor van 0.0 geeft een zwart-wit afbeelding, een factor van 1.0 geeft "
-"de originele afbeelding."
 
 #: models.py:670
 msgid "brightness"
-msgstr "helderheid"
+msgstr ""
 
 #: models.py:672
 msgid ""
 "A factor of 0.0 gives a black image, a factor of 1.0 gives the original "
 "image."
 msgstr ""
-"Een factor van 0.0 geeft een zwarte afbeelding, een factor van 1.0 geeft de "
-"originele afbeelding."
 
 #: models.py:674
 msgid "contrast"
-msgstr "contrast"
+msgstr ""
 
 #: models.py:676
 msgid ""
 "A factor of 0.0 gives a solid grey image, a factor of 1.0 gives the original "
 "image."
 msgstr ""
-"Een factor van 0.0 geeft een egaal grijze afbeelding, een factor van 1.0 "
-"geeft de originele afbeelding."
 
 #: models.py:678
 msgid "sharpness"
-msgstr "scherpte"
+msgstr ""
 
 #: models.py:680
 msgid ""
 "A factor of 0.0 gives a blurred image, a factor of 1.0 gives the original "
 "image."
 msgstr ""
-"Een factor van 0.0 geeft een vervaagde afbeelding, een factor van 1.0 geeft "
-"de originele afbeelding."
 
 #: models.py:682
 msgid "filters"
-msgstr "filters"
+msgstr ""
 
 #: models.py:686
 msgid "size"
-msgstr "afmeting"
+msgstr ""
 
 #: models.py:688
 msgid ""
@@ -455,170 +430,147 @@ msgid ""
 "of 0.0 adds no reflection, a factor of 1.0 adds a reflection equal to the "
 "height of the orignal image."
 msgstr ""
-"De hoogte van de reflectie als precentage van de originele afbeelding. Een "
-"factor van 0.0 voegt geen reflectie toe, een factor van 1.0 voegt een "
-"reflectie toe met een gelijke hoogte als de originele afbeelding."
 
 #: models.py:691
 msgid "strength"
-msgstr "sterkte"
+msgstr ""
 
 #: models.py:693
 msgid "The initial opacity of the reflection gradient."
-msgstr "De initiële doorzichtigheid van de reflectie-gradatie."
+msgstr ""
 
 #: models.py:697
 msgid ""
 "The background color of the reflection gradient. Set this to match the "
 "background color of your page."
 msgstr ""
-"De achtergrondkleur van de reflectie-gradatie. Stel dit in als hetzelfde als "
-"de achtergrondkleur van je pagina."
 
 #: models.py:701 models.py:807
 msgid "photo effect"
-msgstr "foto-effect"
+msgstr ""
 
 #: models.py:702
 msgid "photo effects"
-msgstr "foto-effecten"
+msgstr ""
 
 #: models.py:733
 msgid "style"
-msgstr "stijl"
+msgstr ""
 
 #: models.py:737
 msgid "opacity"
-msgstr "doorzichtigheid"
+msgstr ""
 
 #: models.py:739
 msgid "The opacity of the overlay."
-msgstr "De doorzichtigheid van overliggende afbeelding."
+msgstr ""
 
 #: models.py:742
 msgid "watermark"
-msgstr "watermerk"
+msgstr ""
 
 #: models.py:743
 msgid "watermarks"
-msgstr "watermerken"
+msgstr ""
 
 #: models.py:767
 msgid ""
 "Photo size name should contain only letters, numbers and underscores. "
 "Examples: \"thumbnail\", \"display\", \"small\", \"main_page_widget\"."
 msgstr ""
-"De naam van de foto-maat mag alleen letters, nummers en underscores "
-"bevatten. Voorbeelden: \"miniatuur\", \"weergave\", \"klein\", "
-"\"hoofdpagina_zijbalk_miniatuur\"."
 
 #: models.py:774
 msgid "width"
-msgstr "breedte"
+msgstr ""
 
 #: models.py:777
 msgid ""
 "If width is set to \"0\" the image will be scaled to the supplied height."
 msgstr ""
-"Als de breedte op \"0\" wordt gezet zal de afbeelding geschaald worden naar "
-"de opgegeven hoogte."
 
 #: models.py:778
 msgid "height"
-msgstr "hoogte"
+msgstr ""
 
 #: models.py:781
 msgid ""
 "If height is set to \"0\" the image will be scaled to the supplied width"
 msgstr ""
-"Als de hoogte op \"0\" wordt gezet zal de afbeelding geschaald worden naar "
-"de opgegeven breedte."
 
 #: models.py:782
 msgid "quality"
-msgstr "kwaliteit"
+msgstr ""
 
 #: models.py:785
 msgid "JPEG image quality."
-msgstr "JPEG afbeeldingskwaliteit"
+msgstr ""
 
 #: models.py:786
 msgid "upscale images?"
-msgstr "afbeeldingen opschalen?"
+msgstr ""
 
 #: models.py:788
 msgid ""
 "If selected the image will be scaled up if necessary to fit the supplied "
 "dimensions. Cropped sizes will be upscaled regardless of this setting."
 msgstr ""
-"Als dit is gekozen zal de afbeelding, indien nodig, opgeschaald worden naar "
-"opgegeven afmetingen. Afgeknipte maten worden altijd opgeschaald, ongeacht "
-"deze instelling."
 
 #: models.py:792
 msgid "crop to fit?"
-msgstr "gepast afknippen?"
+msgstr ""
 
 #: models.py:794
 msgid ""
 "If selected the image will be scaled and cropped to fit the supplied "
 "dimensions."
 msgstr ""
-"Als dit is gekozen zal de afbeelding geschaald en afgeknipt worden naar de "
-"opgegeven afmetingen."
 
 #: models.py:796
 msgid "pre-cache?"
-msgstr "vooraf cachen?"
+msgstr ""
 
 #: models.py:798
 msgid "If selected this photo size will be pre-cached as photos are added."
 msgstr ""
-"Als dit is gekozen zullen foto's met deze foto-maat van te voren worden "
-"gecached wanneer ze worden toegevoegd."
 
 #: models.py:799
 msgid "increment view count?"
-msgstr "aantal vertoningen ophogen?"
+msgstr ""
 
 #: models.py:801
 msgid ""
 "If selected the image's \"view_count\" will be incremented when this photo "
 "size is displayed."
 msgstr ""
-"Als dit is gekozen zal het aantal vertoningen van de afbeelding worden "
-"opgehoogd wanneer deze foto-maat wordt weergegeven."
 
 #: models.py:813
 msgid "watermark image"
-msgstr "watermerk-afbeelding"
+msgstr ""
 
 #: models.py:818
 msgid "photo size"
-msgstr "foto-maat"
+msgstr ""
 
 #: models.py:819
 msgid "photo sizes"
-msgstr "foto-maten"
+msgstr ""
 
 #: models.py:836
 msgid "Can only crop photos if both width and height dimensions are set."
 msgstr ""
-"Kan alleen foto's uitsnijden als zowel de waarde van de breedte en de hoogte "
-"zijn ingesteld."
 
 #: templates/admin/photologue/photo/change_list.html:9
 msgid "Upload a zip archive"
-msgstr "Upload een zip-archief"
+msgstr ""
 
 #: templates/admin/photologue/photo/upload_zip.html:15
 msgid "Home"
-msgstr "Home"
+msgstr ""
 
 #: templates/admin/photologue/photo/upload_zip.html:19
 #: templates/admin/photologue/photo/upload_zip.html:53
 msgid "Upload"
-msgstr "Upload"
+msgstr ""
 
 #: templates/admin/photologue/photo/upload_zip.html:28
 msgid ""
@@ -631,102 +583,93 @@ msgid ""
 "\t\t</ul>\n"
 "\t"
 msgstr ""
-"\n"
-"\t\t<p>Op deze pagina kun je meerdere foto's tegelijk uploaden indien ze "
-"allen\n"
-"\t\tin een zip-archief zitten. De foto's kunnen:</p>\n"
-"\t\t<ul>\n"
-"\t\t\t<li>Toegevoegd worden aan een bestaande gallerij</li>\n"
-"\t\t\t<li>Of er wordt een gallerij aangemaakt met de gegeven titel.</li>\n"
-"\t\t</ul>\n"
-"\t"
 
 #: templates/admin/photologue/photo/upload_zip.html:39
 msgid "Please correct the error below."
-msgstr "Verbeter de fout alstublieft."
+msgstr ""
 
 #: templates/admin/photologue/photo/upload_zip.html:39
 msgid "Please correct the errors below."
-msgstr "Verbeter de fouten alstublieft."
+msgstr ""
 
 #: templates/photologue/gallery_archive.html:4
 #: templates/photologue/gallery_archive.html:9
 msgid "Latest photo galleries"
-msgstr "Meest recente fotogallerijen"
+msgstr ""
 
 #: templates/photologue/gallery_archive.html:16
 #: templates/photologue/photo_archive.html:16
 msgid "Filter by year"
-msgstr "Filter op jaar"
+msgstr ""
 
 #: templates/photologue/gallery_archive.html:32
 #: templates/photologue/gallery_list.html:26
 msgid "No galleries were found"
-msgstr "Er zijn geen gallerijen gevonden"
+msgstr ""
 
 #: templates/photologue/gallery_archive_day.html:4
 #: templates/photologue/gallery_archive_day.html:9
 #, python-format
 msgid "Galleries for %(show_day)s"
-msgstr "Gallerijen van %(show_day)s"
+msgstr ""
 
 #: templates/photologue/gallery_archive_day.html:18
 #: templates/photologue/gallery_archive_month.html:32
 #: templates/photologue/gallery_archive_year.html:32
 msgid "No galleries were found."
-msgstr "Er zijn geen gallerijen gevonden."
+msgstr ""
 
 #: templates/photologue/gallery_archive_day.html:22
 msgid "View all galleries for month"
-msgstr "Bekijk alle gallerijen uit maand"
+msgstr ""
 
 #: templates/photologue/gallery_archive_month.html:4
 #: templates/photologue/gallery_archive_month.html:9
 #, python-format
 msgid "Galleries for %(show_month)s"
-msgstr "Gallerijen uit %(show_month)s"
+msgstr ""
 
 #: templates/photologue/gallery_archive_month.html:16
 #: templates/photologue/photo_archive_month.html:16
 msgid "Filter by day"
-msgstr "Filter op dag"
+msgstr ""
 
 #: templates/photologue/gallery_archive_month.html:35
 msgid "View all galleries for year"
-msgstr "Bekijk all gallerijen uit jaar"
+msgstr ""
 
 #: templates/photologue/gallery_archive_year.html:4
 #: templates/photologue/gallery_archive_year.html:9
 #, python-format
 msgid "Galleries for %(show_year)s"
-msgstr "Gallerijen uit %(show_year)s"
+msgstr ""
 
 #: templates/photologue/gallery_archive_year.html:16
 #: templates/photologue/photo_archive_year.html:17
 msgid "Filter by month"
-msgstr "Filter op maand"
+msgstr ""
 
 #: templates/photologue/gallery_archive_year.html:35
 #: templates/photologue/gallery_detail.html:17
 msgid "View all galleries"
-msgstr "Bekijk alle gallerijen"
+msgstr ""
 
 #: templates/photologue/gallery_detail.html:10
 #: templates/photologue/gallery_list.html:16
 #: templates/photologue/includes/gallery_sample.html:8
 #: templates/photologue/photo_detail.html:10
 msgid "Published"
-msgstr "Gepubliceerd"
+msgstr ""
 
 #: templates/photologue/gallery_list.html:4
 #: templates/photologue/gallery_list.html:9
 msgid "All galleries"
-msgstr "Alle gallerijen"
+msgstr ""
 
 #: templates/photologue/includes/paginator.html:6
 #: templates/photologue/includes/paginator.html:8
 msgid "Previous"
-msgstr "Vorige"
+msgstr ""
 
 #: templates/photologue/includes/paginator.html:11
 #, python-format
@@ -735,19 +678,16 @@ msgid ""
 "\t\t\t\t    page %(page_number)s of %(total_pages)s\n"
 "\t\t\t\t"
 msgstr ""
-"\n"
-"\t\t\t\t    pagina %(page_number)s van %(total_pages)s\n"
-"\t\t\t\t"
 
 #: templates/photologue/includes/paginator.html:16
 #: templates/photologue/includes/paginator.html:18
 msgid "Next"
-msgstr "Volgende"
+msgstr ""
 
 #: templates/photologue/photo_archive.html:4
 #: templates/photologue/photo_archive.html:9
 msgid "Latest photos"
-msgstr "Laatste foto's"
+msgstr ""
 
 #: templates/photologue/photo_archive.html:34
 #: templates/photologue/photo_archive_day.html:21
@@ -755,46 +695,46 @@ msgstr "Laatste foto's"
 #: templates/photologue/photo_archive_year.html:37
 #: templates/photologue/photo_list.html:21
 msgid "No photos were found"
-msgstr "Er zijn geen foto's gevonden"
+msgstr ""
 
 #: templates/photologue/photo_archive_day.html:4
 #: templates/photologue/photo_archive_day.html:9
 #, python-format
 msgid "Photos for %(show_day)s"
-msgstr "Foto's van %(show_day)s"
+msgstr ""
 
 #: templates/photologue/photo_archive_day.html:24
 msgid "View all photos for month"
-msgstr "Bekijk alle foto's van maand"
+msgstr ""
 
 #: templates/photologue/photo_archive_month.html:4
 #: templates/photologue/photo_archive_month.html:9
 #, python-format
 msgid "Photos for %(show_month)s"
-msgstr "Foto's van  %(show_month)s"
+msgstr ""
 
 #: templates/photologue/photo_archive_month.html:39
 msgid "View all photos for year"
-msgstr "Bekijk alle foto's uit het jaar"
+msgstr ""
 
 #: templates/photologue/photo_archive_year.html:4
 #: templates/photologue/photo_archive_year.html:10
 #, python-format
 msgid "Photos for %(show_year)s"
-msgstr "Foto's uit %(show_year)s"
+msgstr ""
 
 #: templates/photologue/photo_archive_year.html:40
 msgid "View all photos"
-msgstr "Bekijk alle foto's"
+msgstr ""
 
 #: templates/photologue/photo_detail.html:22
 msgid "This photo is found in the following galleries"
-msgstr "Deze foto staat in de volgende gallerijen"
+msgstr ""
 
 #: templates/photologue/photo_list.html:4
 #: templates/photologue/photo_list.html:9
 msgid "All photos"
-msgstr "Alle foto's"
+msgstr ""
 
 #~ msgid ""
 #~ "All uploaded photos will be given a title made up of this title + a "

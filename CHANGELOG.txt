@@ -1,9 +1,28 @@
 Changelog
 =========
 
-3.7wf (2016-10-10)
+3.8.1 (2017-12-03)
+------------------
+
+- Admin thumbnails were not displaying correctly.
+
+
+3.8 (2017-12-03)
 ----------------
 
+- Added support for Django 2.0.
+- Dropped support for Django 1.8 and 1.10.
+- Did not really work with Django 1.11 - sortedm2m library was broken. Upgraded sortedm2m and it now works with 1.11.
+- New translation for Ukranian; updated translation for Spanish.
+- Fixed template tag that was broken in Django 1.11.
+
+3.7wf (2017-05-10)
+----------------
+
+- Now works with Django 1.11. Deprecated support for Django 1.9.
+- Fixed the management commands to work in the latest versions of Django.
+- Fixed an issue with some photo sizes not being created (see #170).
+- Updated translations for French and Basque (provided by matthieu.payet and urtzai).
 - Easy support of subdomains
 
 3.6 (2016-10-05)
@@ -31,7 +50,7 @@ Changelog
 - Increased length of 'title' fields to 250 chars in order to store longer title.
 - Rotate image before resize, to comply with height/width constraints (see #145).
 - Added forgotten migration (#148).
-- Changing "Photo" image leaves extra files on server (#147).  
+- Changing "Photo" image leaves extra files on server (#147).
 - Normalize filenames to ASCII so they work across all filesystems (#109).
 - Updated Hungarian translation.
 
@@ -141,7 +160,7 @@ pip install -e git://github.com/richardbarran/django-sortedm2m.git@9a609a1c6b790
 
 THE FOLLOWING CHANGES BREAK BACKWARDS COMPATIBILITY!
 
-- Django 1.7 comes with a new migrations framework which replaces South - 
+- Django 1.7 comes with a new migrations framework which replaces South -
   if you continue to use Django 1.6, you'll need to add new settings. Please
   refer in the docs to the installation instructions.
   If you're upgrading to Django 1.7 - upgrade Photologue first, THEN upgrade
@@ -178,7 +197,7 @@ Other changes:
 2.8.2 (2014-07-26)
 ------------------
 
-- The latest release of django-sortedm2m is not compatible with older 
+- The latest release of django-sortedm2m is not compatible with older
   versions of Django, so don't use it (issue #92).
 
 2.8.1 (2014-07-26)
@@ -193,7 +212,7 @@ Other changes:
 Upgrade notes:
 
 1. Photologue now depends on django-sortedm2m and django-model-utils - please
-   refer to installation instructions. These dependencies should be added 
+   refer to installation instructions. These dependencies should be added
    automatically.
 
 2. Run South migrations.
