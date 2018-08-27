@@ -1,5 +1,5 @@
 import os
 
-__version__ = '3.8.1wf'
+__version__ = '3.8.1+whyfly.1'
 
 PHOTOLOGUE_APP_DIR = os.path.dirname(os.path.abspath(__file__))

@@ -1,21 +1,14 @@
 #/usr/bin/env python
-import uuid
 import os
 from setuptools import setup, find_packages
-from pip.req import parse_requirements
 
 import photologue
 
 
 def get_requirements(source):
-
-    try:
-        install_reqs = parse_requirements(source, session=uuid.uuid1())
-    except TypeError:
-        # Older version of pip.
-        install_reqs = parse_requirements(source)
-    required = list(set([str(ir.req) for ir in install_reqs]))
-
+    # https://stackoverflow.com/questions/49837301/pip-10-no-module-named-pip-req
+    with open(source) as f:
+        required = f.read().strip().split('\n')
     # Temp situation: transition from PIL to Pillow, add a hook so people can
     # skip installing Pillow.
     if os.path.exists('/tmp/PHOTOLOGUE_NO_PILLOW'):
