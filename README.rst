@@ -4,8 +4,8 @@ Django-photologue
     :target: https://pypi.python.org/pypi/django-photologue/
     :alt: Latest PyPI version
 
-.. image:: https://travis-ci.org/richardbarran/django-photologue.svg?branch=master
-    :target: https://travis-ci.org/richardbarran/django-photologue
+.. image:: https://travis-ci.org/whyflyru/django-photologue.svg?branch=master
+    :target: https://travis-ci.org/whyflyru/django-photologue.svg
 
 .. image:: https://coveralls.io/repos/github/richardbarran/django-photologue/badge.svg?branch=master
     :target: https://coveralls.io/github/richardbarran/django-photologue?branch=master
