@@ -1,36 +1,35 @@
+import logging
+import unicodedata
+from importlib import import_module
+from inspect import isclass
+
+import exifread
 import os
 import random
-from datetime import datetime
-from inspect import isclass
-import logging
-from io import BytesIO
-from importlib import import_module
-import exifread
-import unicodedata
 from PIL import Image, ImageFile, ImageFilter, ImageEnhance
-
-from django.utils.timezone import now
-from django.db import models
-from django.db.models.signals import post_save
+from datetime import datetime
 from django.conf import settings
+from django.contrib.sites.models import Site
+from django.core.exceptions import ValidationError
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
-from django.urls import reverse
-from django.core.exceptions import ValidationError
+from django.core.validators import RegexValidator
+from django.db import models
+from django.db.models.signals import post_save
 from django.template.defaultfilters import slugify
+from django.urls import reverse
 from django.utils.encoding import force_text, smart_str, filepath_to_uri
+from django.utils.encoding import python_2_unicode_compatible
 from django.utils.functional import curry
 from django.utils.safestring import mark_safe
+from django.utils.timezone import now
 from django.utils.translation import ugettext_lazy as _
-from django.utils.encoding import python_2_unicode_compatible
-from django.core.validators import RegexValidator
-from django.contrib.sites.models import Site
-
+from io import BytesIO
 from sortedm2m.fields import SortedManyToManyField
 
+from .managers import GalleryQuerySet, PhotoQuerySet
 from .utils.reflection import add_reflection
 from .utils.watermark import apply_watermark
-from .managers import GalleryQuerySet, PhotoQuerySet
 
 logger = logging.getLogger('photologue.models')
 
@@ -143,7 +142,6 @@ size_method_map = {}
 
 
 class TagField(models.CharField):
-
     """Tags have been removed from Photologue, but the migrations still refer to them so this
     Tagfield definition is left here.
     """
@@ -229,6 +227,7 @@ class Gallery(models.Model):
             return self.public().count()
         else:
             return self.photos.filter(sites__id=settings.SITE_ID).count()
+
     photo_count.short_description = _('count')
 
     def public(self):
@@ -240,8 +239,8 @@ class Gallery(models.Model):
         Return all photos that belong to this gallery but don't share the
         gallery's site.
         """
-        return self.photos.filter(is_public=True)\
-                          .exclude(sites__id__in=self.sites.all())
+        return self.photos.filter(is_public=True) \
+            .exclude(sites__id__in=self.sites.all())
 
 
 class ImageModel(models.Model):
@@ -290,6 +289,7 @@ class ImageModel(models.Model):
                 return mark_safe(u'<a href="{}"><img src="{}"></a>'.format(self.get_absolute_url(), func()))
             else:
                 return mark_safe(u'<a href="{}"><img src="{}"></a>'.format(self.image.url, func()))
+
     admin_thumbnail.short_description = _('Thumbnail')
     admin_thumbnail.allow_tags = True
 
@@ -314,8 +314,11 @@ class ImageModel(models.Model):
         photosize = PhotoSizeCache().sizes.get(size)
         if not self.size_exists(photosize):
             self.create_size(photosize)
-        return Image.open(self.image.storage.open(
-            self._get_SIZE_filename(size))).size
+        try:
+            return Image.open(self.image.storage.open(
+                self._get_SIZE_filename(size))).size
+        except:
+            return None
 
     def _get_SIZE_url(self, size):
         photosize = PhotoSizeCache().sizes.get(size)
@@ -391,7 +394,7 @@ class ImageModel(models.Model):
             new_dimensions = (int(round(cur_width * ratio)),
                               int(round(cur_height * ratio)))
             if new_dimensions[0] > cur_width or \
-               new_dimensions[1] > cur_height:
+                    new_dimensions[1] > cur_height:
                 if not photosize.upscale:
                     return im
             im = im.resize(new_dimensions, Image.ANTIALIAS)
@@ -431,6 +434,9 @@ class ImageModel(models.Model):
         im_filename = getattr(self, "get_%s_filename" % photosize.name)()
         try:
             buffer = BytesIO()
+            # Issue #182 - test fix from https://github.com/bashu/django-watermark/issues/31
+            if im.mode.endswith('A'):
+                im = im.convert(im.mode[:-1])
             if im_format != 'JPEG':
                 im.save(buffer, im_format)
             else:
@@ -610,12 +616,16 @@ class BaseEffect(models.Model):
                 'Photologue was unable to open the sample image: %s.' % SAMPLE_IMAGE_PATH)
         im = self.process(im)
         buffer = BytesIO()
+        # Issue #182 - test fix from https://github.com/bashu/django-watermark/issues/31
+        if im.mode.endswith('A'):
+            im = im.convert(im.mode[:-1])
         im.save(buffer, 'JPEG', quality=90, optimize=True)
         buffer_contents = ContentFile(buffer.getvalue())
         default_storage.save(self.sample_filename(), buffer_contents)
 
     def admin_sample(self):
         return u'<img src="%s">' % self.sample_url()
+
     admin_sample.short_description = 'Sample'
     admin_sample.allow_tags = True
 
@@ -657,7 +667,6 @@ class BaseEffect(models.Model):
 
 
 class PhotoEffect(BaseEffect):
-
     """ A pre-defined effect to apply to photos """
     transpose_method = models.CharField(_('rotate or flip'),
                                         max_length=15,
@@ -744,7 +753,7 @@ class Watermark(BaseEffect):
 
     def delete(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." \
-            % (self._meta.object_name, self._meta.pk.attname)
+                                               % (self._meta.object_name, self._meta.pk.attname)
         super(Watermark, self).delete()
         self.image.storage.delete(self.image.name)
 
@@ -755,7 +764,6 @@ class Watermark(BaseEffect):
 
 @python_2_unicode_compatible
 class PhotoSize(models.Model):
-
     """About the Photosize name: it's used to create get_PHOTOSIZE_url() methods,
     so the name has to follow the same restrictions as any Python method name,
     e.g. no spaces or non-ascii characters."""
@@ -768,7 +776,7 @@ class PhotoSize(models.Model):
                                 '"thumbnail", "display", "small", "main_page_widget".'),
                             validators=[RegexValidator(regex='^[a-z0-9_]+$',
                                                        message='Use only plain lowercase letters (ASCII), numbers and '
-                                                       'underscores.'
+                                                               'underscores.'
                                                        )]
                             )
     width = models.PositiveIntegerField(_('width'),
@@ -778,7 +786,7 @@ class PhotoSize(models.Model):
     height = models.PositiveIntegerField(_('height'),
                                          default=0,
                                          help_text=_(
-        'If height is set to "0" the image will be scaled to the supplied width'))
+                                             'If height is set to "0" the image will be scaled to the supplied width'))
     quality = models.PositiveIntegerField(_('quality'),
                                           choices=JPEG_QUALITY_CHOICES,
                                           default=70,
@@ -842,7 +850,7 @@ class PhotoSize(models.Model):
 
     def delete(self):
         assert self._get_pk_val() is not None, "%s object can't be deleted because its %s attribute is set to None." \
-            % (self._meta.object_name, self._meta.pk.attname)
+                                               % (self._meta.object_name, self._meta.pk.attname)
         self.clear_cache()
         super(PhotoSize, self).delete()
 
@@ -851,6 +859,7 @@ class PhotoSize(models.Model):
 
     def _set_size(self, value):
         self.width, self.height = value
+
     size = property(_get_size, _set_size)
 
 
@@ -897,5 +906,7 @@ def add_default_site(instance, created, **kwargs):
     if instance.sites.exists():
         return
     instance.sites.add(Site.objects.get_current())
+
+
 post_save.connect(add_default_site, sender=Gallery)
 post_save.connect(add_default_site, sender=Photo)

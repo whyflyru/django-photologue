@@ -6,18 +6,27 @@
 Welcome to django-photologue's documentation!
 =============================================
 
+.. include:: ../README.rst
+   :start-line: 0
+   :end-line: 25
+
+.. include:: ../README.rst
+   :start-line: 31
+   :end-line: 46
+
 Contents:
+=========
 
 .. toctree::
     :maxdepth: 2
 
     pages/installation
+    pages/usage
     pages/customising/templates
     pages/customising/settings
     pages/customising/admin
     pages/customising/views
     pages/customising/models
-    pages/customising/contrib
     pages/contributing
     pages/changelog_page
 
