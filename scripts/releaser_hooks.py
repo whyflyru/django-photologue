@@ -22,9 +22,9 @@ def prereleaser_before(data):
     print('Running unit tests.')
     subprocess.check_output(["python", "example_project/manage.py", "test", "photologue"])
 
-    print('Running PEP8 check.')
+    print('Running flake8 check.')
     # See setup.cfg for configuration options.
-    subprocess.check_output(["pycodestyle"])
+    subprocess.check_output(["flake8"])
 
     print('Checking that we have no outstanding DB migrations.')
     output = subprocess.check_output(["python", "example_project/manage.py", "makemigrations", "--dry-run",
@@ -43,7 +43,7 @@ def prereleaser_before(data):
     # Now add info from the translator files. This is incomplete, we can only list
     # the 'last contributor' to each translation.
     for language in os.listdir('photologue/locale/'):
-        filename = 'photologue/locale/{0}/LC_MESSAGES/django.po'.format(language)
+        filename = 'photologue/locale/{}/LC_MESSAGES/django.po'.format(language)
         po = polib.pofile(filename)
         last_translator = po.metadata['Last-Translator']
         contributors_list.append(last_translator[:last_translator.find('<') - 1])
@@ -81,6 +81,5 @@ def prereleaser_before(data):
             f.write(i + '\n')
 
     # And commit the new contributors file.
-    output = subprocess.check_output(["pycodestyle"])
-    if output:
+    if subprocess.check_output(["git", "diff", "CONTRIBUTORS.txt"]):
         subprocess.check_output(["git", "commit", "-m", "Updated the list of contributors.", "CONTRIBUTORS.txt"])
